@@ -1,0 +1,67 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+header * {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+nav a:link {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
+  transition: all 0.8s ease;
+}
+
+#top-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 40px;
+}
+
+.left,
+.right {
+  color: black;
+  padding: 40px;
+}
+
+#top-container img {
+  border-radius: 50%;
+}
+
+#middle-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.5rem;
+  padding-top: 90px;
+}
+
+#middle-container .about-me {
+  padding-bottom: 30px;
+}
