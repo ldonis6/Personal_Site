@@ -7,7 +7,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Navigation section  and wach section of the website*/
+body {
+  font-family: "poppins", "sans-serif";
+}
+
+/* Navigation section  and each section of the website*/
 #home,
 #about,
 #skills,
@@ -26,7 +30,7 @@ html {
 #about {
   display: flex;
   align-items: center;
-  background-color: rgb(42, 47, 51);
+  background-color: rgb(51, 55, 57);
 }
 
 #skills {
@@ -37,19 +41,11 @@ html {
   justify-content: center;
 }
 
-#personal-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(42, 47, 51);
-  color: white;
-}
-
 #contact {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(42, 47, 51);
+  background-color: rgb(51, 55, 57);
 }
 
 /* Header section with links to other parts of the website */
@@ -60,29 +56,42 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
-  position: fixed;
-  background-color: #f9f9f9;
+  background-color: rgb(42, 47, 51);
   width: 100%;
+  z-index: 999;
+  position: fixed;
 }
 
-header * {
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-nav a:link {
+nav a {
   text-decoration: none;
-  color: black;
+  text-transform: capitalize;
+  color: #443d3d;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 10px;
+  margin: 0 30px;
+  position: relative;
 }
 
-nav a:visited {
-  text-decoration: none;
-  color: black;
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #2ecc71;
+  border-radius: 50px;
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
 }
 
 nav a:hover {
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
-  transition: all 0.8s ease;
+  color: #2ecc71;
+}
+
+nav a:hover::before {
+  transform: scaleX(1);
 }
 
 /* Makes containers be more in the center of the website */
@@ -114,22 +123,24 @@ nav a:hover {
 }
 
 /* About section of the website */
+
 #middle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 5rem;
+  gap: 10px;
+  color: white;
+}
+
+.right-about,
+.left-about {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
-  font-size: 1.5rem;
-  color: white;
-}
-
-.about-text {
-  text-wrap: wrap;
-}
-
-#middle-container .about-me {
-  padding-bottom: 30px;
+  padding: 50px;
 }
 
 /* Skills section */
