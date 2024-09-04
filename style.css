@@ -3,15 +3,62 @@
   padding: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f9f9f9;
 }
 
+/* Navigation section  and wach section of the website*/
+#home,
+#about,
+#personal-links,
+#contact {
+  height: 100vh;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: wheat;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: slategray;
+}
+
+#personal-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(63, 60, 60);
+  color: white;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+/* Header section with links to other parts of the website */
+
 header {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
+  position: fixed;
+  background-color: #f9f9f9;
+  width: 100%;
 }
 
 header * {
@@ -34,12 +81,22 @@ nav a:hover {
   transition: all 0.8s ease;
 }
 
+/* Makes containers be more in the center of the website */
+#top-container,
+#middle-container,
+#links,
+#end-container {
+  padding-bottom: 40px;
+}
+
+/* First part of the website */
 #top-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 40px;
+  gap: 10px;
 }
 
 .left,
@@ -52,16 +109,53 @@ nav a:hover {
   border-radius: 50%;
 }
 
+/* About section of the website */
 #middle-container {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   color: black;
   font-size: 1.5rem;
-  padding-top: 90px;
 }
 
 #middle-container .about-me {
   padding-bottom: 30px;
+}
+
+/* Links part of the website */
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  gap: 50px;
+}
+
+#links nav a {
+  padding: 10px;
+}
+
+#links nav a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#links nav a:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px black;
+  transition: all 0.8s ease;
+}
+
+/* Contact part of the website */
+#end-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.bottom-left,
+.bottom-right {
+  padding: 40px;
 }
