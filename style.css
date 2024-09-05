@@ -12,20 +12,27 @@ body {
   font-family: "poppins", "sans-serif";
 }
 
+:root {
+  --main-color: #eeb885;
+}
+
 /* Navigation section  and each section of the website*/
 #home,
 #about,
 #skills,
-#personal-links,
 #contact {
+  width: 100%;
   height: 100vh;
   background-color: black;
+  color: white;
 }
 
 #home {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  padding: 70px 10% 0;
 }
 
 #about {
@@ -86,7 +93,7 @@ nav a::before {
   bottom: -5px;
   height: 2px;
   width: 100%;
-  background-color: #2ecc71;
+  background-color: var(--main-color);
   border-radius: 50px;
   transform: scaleX(0);
   transform-origin: left;
@@ -102,11 +109,13 @@ nav a.active::before {
 nav a:hover,
 nav a:focus,
 nav a.active {
-  color: #2ecc71; /* Keep the color change for hover, focus, or active state */
+  color: var(
+    --main-color
+  ); /* Keep the color change for hover, focus, or active state */
 }
 
 .active {
-  color: #2ecc71; /* Keep the color change for active state */
+  color: var(--main-color); /* Keep the color change for active state */
 }
 
 .active::before {
@@ -129,8 +138,37 @@ nav a.active {
   padding: 40px;
 }
 
+.left h1 span {
+  color: var(--main-color);
+}
+
 #top-container img {
   border-radius: 50%;
+}
+
+.right img {
+  max-width: 450px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  font-size: 40px;
+  color: var(--main-color);
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+}
+
+.social-media a:hover {
+  background-color: var(--main-color);
+  color: black;
+  box-shadow: 0 0 20px var(--main-color);
 }
 
 /* About section of the website */
@@ -138,20 +176,19 @@ nav a.active {
 #middle-container {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  padding: 5rem;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 40px;
   gap: 10px;
-  color: white;
 }
 
-.right-about,
-.left-about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  gap: 50px;
+.left-about,
+.right-about {
+  padding: 40px;
+}
+.left-about img {
+  height: 600px;
+  width: 600px;
 }
 
 .about-me {
@@ -180,7 +217,7 @@ nav a.active {
   transform: translateX(-50%);
   height: 4px;
   width: 100px;
-  background-color: #2ecc71;
+  background-color: var(--main-color);
 }
 
 .skill-container {
@@ -225,7 +262,7 @@ nav a.active {
   width: 0;
   height: 4px;
   border-radius: 2px 0 0 2px;
-  background-color: #2ecc71;
+  background-color: var(--main-color);
   transition: 0.5s;
 }
 
@@ -237,7 +274,7 @@ nav a.active {
   width: 0;
   height: 4px;
   border-radius: 0 2px 2px 0;
-  background-color: #2ecc71;
+  background-color: var(--main-color);
   transition: 0.5s;
 }
 
