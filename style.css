@@ -30,6 +30,7 @@ body {
 #about {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: rgb(51, 55, 57);
 }
 
@@ -65,7 +66,7 @@ header {
 nav a {
   text-decoration: none;
   text-transform: capitalize;
-  color: #443d3d;
+  color: #7c7777;
   font-size: 20px;
   font-weight: 600;
   padding: 0 10px;
@@ -127,7 +128,6 @@ nav a:hover::before {
 #middle-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: 1.5rem;
   padding: 5rem;
   gap: 10px;
@@ -139,8 +139,17 @@ nav a:hover::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 50px;
+}
+
+.right-about {
+  width: 100vh;
+}
+
+.about-me {
+  font-size: 4rem;
 }
 
 /* Skills section */
