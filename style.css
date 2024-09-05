@@ -20,7 +20,7 @@ section {
   --main-color: #85eeb9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   img {
     width: 10%; /* Reduce width on mobile */
     max-width: 100%; /* Ensure images don’t overflow */
@@ -54,6 +54,10 @@ section {
 
   nav {
     display: none;
+  }
+
+  #top-container {
+    flex-wrap: wrap-reverse;
   }
 }
 
@@ -238,7 +242,6 @@ nav a.active {
   align-items: center;
   justify-content: space-between;
   font-size: 2.5rem;
-  flex-wrap: wrap-reverse;
 }
 
 .left h1 span {
@@ -331,10 +334,6 @@ nav a.active {
 }
 
 /* Skills section */
-
-.inner {
-  padding: 10rem;
-}
 
 .skills-header {
   display: flex;
