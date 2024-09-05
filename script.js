@@ -18,3 +18,11 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+var typed = new Typed(".multiple-text", {
+  strings: ["Full-Stack Dev", "Web Designer", "Programmer", "Student"],
+  typeSpeed: 50,
+  backSpeed: 50,
+  backDelay: 1000,
+  loop: true,
+});

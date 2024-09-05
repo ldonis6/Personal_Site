@@ -1,6 +1,6 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -12,8 +12,48 @@ body {
   font-family: "poppins", "sans-serif";
 }
 
+section {
+  padding: 100px 0;
+}
+
 :root {
-  --main-color: #eeb885;
+  --main-color: #85eeb9;
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 10%; /* Reduce width on mobile */
+    max-width: 100%; /* Ensure images don’t overflow */
+    height: auto; /* Maintain aspect ratio */
+    /* Adjust width as necessary */
+  }
+
+  h1,
+  h2 {
+    font-size: 7vw; /* Make headings smaller */
+  }
+
+  .left .myName {
+    font-size: 2rem;
+  }
+  .multiple-text {
+    font-size: 1.8rem; /* Adjust for mobile */
+  }
+  #top-container,
+  #middle-container,
+  .inner,
+  #end-container {
+    display: flex;
+    flex-direction: column-reverse; /* Stack items */
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  nav {
+    display: none;
+  }
 }
 
 /* Navigation section  and each section of the website*/
@@ -74,16 +114,21 @@ body {
   text-decoration: none;
   font-weight: 600;
   cursor: default;
+  animation: slideRight 1s ease forwards;
 }
 
 .navbar a {
-  font-size: 18px;
+  display: inline-block;
+  font-size: 20px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  margin-left: 35px;
+  margin-left: 40px;
   position: relative;
+  opacity: 0;
   transition: color 0.2s ease;
+  animation: slideDown 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
 }
 
 nav a::before {
@@ -122,35 +167,113 @@ nav a.active {
   transform: scaleX(1); /* Keeps the underline active */
 }
 
-/* First part of the website */
-#top-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  padding: 40px;
-  gap: 10px;
+/* Animation Keyframes */
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.left,
-.right {
-  color: white;
-  padding: 40px;
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* First part of the website */
+#top-container {
+  position: relative;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2.5rem;
+  flex-wrap: wrap-reverse;
 }
 
 .left h1 span {
   color: var(--main-color);
 }
 
-#top-container img {
-  border-radius: 50%;
+.hi {
+  opacity: 0;
+  animation: slideDown 1s ease forwards;
+  animation-delay: 0.7s;
 }
 
-.right img {
-  max-width: 450px;
+.myName {
+  font-size: 6rem;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+}
+
+.name2-p {
+  animation: slideLeft 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.7s;
+}
+
+#top-container img {
+  opacity: 0;
+  border-radius: 50%;
+  height: auto;
+  width: 500px;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .social-media a {
+  opacity: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +286,8 @@ nav a.active {
   text-decoration: none;
   margin: 30px 15px 30px 0;
   transition: 0.5s ease;
+  animation: slideUp 1s ease forwards;
+  animation-delay: calc(0.1s * var(--i));
 }
 
 .social-media a:hover {
@@ -189,6 +314,15 @@ nav a.active {
 .left-about img {
   height: 600px;
   width: 600px;
+}
+
+@media (max-width: 768px) {
+  .left-about img {
+    display: none;
+  }
+  .about-text {
+    font-size: 1.5rem;
+  }
 }
 
 .about-me {
@@ -231,6 +365,9 @@ nav a.active {
 }
 
 .skill-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
   color: #ddd;
   cursor: pointer;
@@ -310,10 +447,26 @@ nav a.active {
   margin-top: 0.5rem;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 768px) {
   .skill-container {
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem 50px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .skill-description {
+    display: none; /* Hide descriptions on mobile */
+  }
+
+  .skill-box {
+    padding: 0.5rem; /* Adjust padding for mobile */
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
   }
 }
 /* Contact part of the website */
@@ -328,4 +481,11 @@ nav a.active {
 .bottom-right {
   padding: 40px;
   color: white;
+}
+
+@media (max-width: 768px) {
+  #end-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

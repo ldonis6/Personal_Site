@@ -3,7 +3,7 @@
   <head>
     <title>Personal Website</title>
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -18,21 +18,22 @@
       <a href="#" class="logo">Portfolio.</a>
 
       <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" style="--i:1;">Home</a>
+        <a href="#about"style="--i:2;">About</a>
+        <a href="#skills"style="--i:3;">Skills</a>
+        <a href="#contact"style="--i:4;">Contact</a>
       </nav>
     </header>
     <section id="home">
       <div id="top-container">
         <div class="left">
-          <h1>Hi, My Name is Luis Donis</h1>
-          <h1>And I'm a <span>Programmer</span></h1>
+          <h1 class="hi">Hi, My Name is</h1>
+          <h1 class="myName">Luis Donis</h1>
+          <h1 class="name2-p">And I'm a <span class="multiple-text"></span></h1>
           <div class="social-media">
-            <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-            <a href="#"><i class='bx bxl-github' ></i></i></a>
-            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/luis.a.d_/" target="_blank" style="--i:7;"><i class="bx bxl-instagram-alt"></i></a>
+            <a href="https://github.com/ldonis6" target="_blank" style="--i:8;"><i class='bx bxl-github' ></i></i></a>
+            <a href="https://www.linkedin.com/in/luis-donis-079143233/" target="_blank" style="--i:9;"><i class='bx bxl-linkedin-square'></i></a>
           </div>
         </div>
         <div class="right">
@@ -49,6 +50,7 @@
           <img
             src="images/placeholder_pfp.png"
             alt="Profile picture"
+            class="about-me-img"
           />
         </div>
         <div class="right-about">
@@ -76,7 +78,7 @@
               </div>
               <h3>HTML 5</h3>
             </div>
-            <p>
+            <p class="skill-description">
               strong foundation in HTML (Hypertext Markup Language), which
               allows me to structure content on the web effectively. I can
               create well-organized and semantically correct web pages, ensuring
@@ -91,7 +93,7 @@
               </div>
               <h3>CSS</h3>
             </div>
-            <p>
+            <p class="skill-description">
               My proficiency in CSS (Cascading Style Sheets) enables me to
               design and style web pages with precision. I can create responsive
               layouts that adapt to various screen sizes, apply animations, and
@@ -110,7 +112,7 @@
               </div>
               <h3>Javascript</h3>
             </div>
-            <p>
+            <p class="skill-description">
               I am skilled in JavaScript, the scripting language that brings
               interactivity and dynamic features to web pages. I can develop
               client-side logic, handle events, manipulate the DOM, and
@@ -129,7 +131,7 @@
               </div>
               <h3>Python</h3>
             </div>
-            <p>
+            <p class="skill-description">
               I am proficient in Python, known for its simplicity and
               versatility. I use Python for automation, data analysis, and
               scripting tasks. My experience includes working with libraries
@@ -145,7 +147,7 @@
               </div>
               <h3>MySQL</h3>
             </div>
-            <p>
+            <p class="skill-description">
               With a solid understanding of SQL (Structured Query Language), I
               can efficiently manage and query databases. I am experienced in
               writing complex queries, performing data manipulation, and
@@ -160,7 +162,7 @@
               </div>
               <h3>Java</h3>
             </div>
-            <p>
+            <p class="skill-description">
               My expertise in Java, a versatile and widely-used programming
               language, allows me to develop robust, object-oriented
               applications. I can build scalable back-end systems, work with
@@ -183,6 +185,8 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Then load your own script -->
     <script src="script.js"></script>
   </body>
 </html>
