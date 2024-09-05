@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 html {
@@ -18,24 +19,22 @@ body {
 #personal-links,
 #contact {
   height: 100vh;
+  background-color: black;
 }
 
 #home {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(42, 47, 51);
 }
 
 #about {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(51, 55, 57);
 }
 
 #skills {
-  background-color: rgb(42, 47, 51);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -46,61 +45,72 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(51, 55, 57);
 }
 
-/* Header section with links to other parts of the website */
-
-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5rem;
-  background-color: rgb(42, 47, 51);
-  width: 100%;
-  z-index: 999;
+/* Header Section */
+.header {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
-nav a {
+.logo {
+  font-size: 25px;
+  color: #fff;
   text-decoration: none;
-  text-transform: capitalize;
-  color: #7c7777;
-  font-size: 20px;
   font-weight: 600;
-  padding: 0 10px;
-  margin: 0 30px;
+  cursor: default;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
   position: relative;
+  transition: color 0.2s ease;
 }
 
 nav a::before {
   content: "";
   position: absolute;
-  bottom: -10px;
   left: 0;
-  height: 6px;
+  bottom: -5px;
+  height: 2px;
   width: 100%;
   background-color: #2ecc71;
   border-radius: 50px;
   transform: scaleX(0);
-  transition: transform 0.2s linear;
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-nav a:hover {
-  color: #2ecc71;
+nav a:hover::before,
+nav a:focus::before,
+nav a.active::before {
+  transform: scaleX(1); /* Keep underline on hover, focus, or active link */
 }
 
-nav a:hover::before {
-  transform: scaleX(1);
+nav a:hover,
+nav a:focus,
+nav a.active {
+  color: #2ecc71; /* Keep the color change for hover, focus, or active state */
 }
 
-/* Makes containers be more in the center of the website */
-#top-container,
-#middle-container,
-#links,
-#end-container {
-  padding-bottom: 40px;
+.active {
+  color: #2ecc71; /* Keep the color change for active state */
+}
+
+.active::before {
+  transform: scaleX(1); /* Keeps the underline active */
 }
 
 /* First part of the website */
@@ -142,10 +152,6 @@ nav a:hover::before {
   padding-left: 50px;
   padding-right: 50px;
   gap: 50px;
-}
-
-.right-about {
-  width: 100vh;
 }
 
 .about-me {
@@ -254,7 +260,6 @@ nav a:hover::before {
   left: 0;
   width: 50%;
   height: 90px;
-  background-color: rgba(100, 100, 100, 0.5);
   border-radius: 45px 0 0 45px;
 }
 
@@ -274,31 +279,6 @@ nav a:hover::before {
     padding: 2rem 50px;
   }
 }
-
-/* Links part of the website */
-#links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  gap: 50px;
-}
-
-#links nav a {
-  padding: 10px;
-}
-
-#links nav a:visited {
-  text-decoration: none;
-  color: white;
-}
-
-#links nav a:hover {
-  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px black;
-  transition: all 0.8s ease;
-}
-
 /* Contact part of the website */
 #end-container {
   display: flex;
