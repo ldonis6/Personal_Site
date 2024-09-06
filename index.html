@@ -15,8 +15,15 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script defer src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Then load your own script -->
+
   </head>
   <body>
+    <div class="container">
+      <div class="bubbles"></div>
+    </div>
     <header class="header">
       <a href="#" class="logo">Portfolio.</a>
 
@@ -29,7 +36,7 @@
     </header>
     <section id="home">
       <div id="home-container">
-        <h3>Hi, My Name is</h3>
+        <h3 class="home-title">Hi, My Name is</h3>
         <h1>Luis Donis</h1>
         <h3 class="typejs">And I'm a <span class="multiple-text"></span></h3>
         <div class="social-media">
@@ -47,7 +54,7 @@
     </section>
     <section id="about">
       <div id="about-container">
-        <h2>About me</h2>
+        <h2 class="about-me">About me</h2>
         <p class="about-text">
           I'm a full-stack developer. I got
           into this field with an intention to learn more about how programs,
@@ -183,8 +190,5 @@
         </div>
       </div>
     </section>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <!-- Then load your own script -->
-    <script src="script.js"></script>
   </body>
 </html>

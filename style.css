@@ -18,15 +18,6 @@ body {
   color: white;
 }
 
-/* Each section of the website*/
-#home,
-#about,
-#skills,
-#contact {
-  width: 100%;
-  height: 100vh;
-}
-
 /* Header Section */
 .header {
   position: fixed;
@@ -62,7 +53,7 @@ body {
   position: relative;
   opacity: 0;
   transition: color 0.2s ease;
-  animation: slideDown 1s ease forwards;
+  animation: slideDown 1s ease-in-out forwards;
   animation-delay: calc(0.2s * var(--i));
 }
 
@@ -141,6 +132,25 @@ nav a.active {
   border-radius: 50%;
 }
 
+.home-img {
+  animation: zoomIn 2s ease-in-out;
+}
+
+#home-container .home-title {
+  opacity: 0;
+  animation: slideLeft 1s ease-in-out forwards;
+}
+
+#home-container h1 {
+  animation: slideLeft 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+#home-container .typejs {
+  animation: slideLeft 3s ease-in-out forwards;
+  opacity: 0;
+}
+
 .social-media a {
   opacity: 0;
   display: inline-flex;
@@ -202,6 +212,7 @@ nav a.active {
 /* Skills section */
 
 #skills {
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -223,7 +234,7 @@ nav a.active {
   left: 50%;
   transform: translateX(-50%);
   height: 4px;
-  width: 100px;
+  width: 150px;
   background-color: var(--main-color);
 }
 
@@ -320,9 +331,19 @@ nav a.active {
   margin-top: 0.5rem;
 }
 
+#skills h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.skill-description {
+  font-size: 30px;
+}
+
 /* Contact part of the website */
 
 #contact {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -342,7 +363,6 @@ nav a.active {
 }
 
 /* Animation Keyframes */
-
 @keyframes slideRight {
   0% {
     transform: translateX(-100px);
@@ -403,6 +423,13 @@ nav a.active {
   }
 }
 
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
 /* Medium-sized screens (like tablets or smaller desktops) */
 @media (max-width: 1300px) {
   nav {
@@ -453,6 +480,34 @@ nav a.active {
     margin-left: 0;
     max-width: 350px;
     height: auto;
+  }
+
+  #skills .skill-description {
+    display: none;
+  }
+
+  .skill-container {
+    gap: 70px;
+  }
+
+  .skill-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .skill-img img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #skills h1 {
+    font-size: 3rem;
+  }
+
+  #end.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
   }
 }
 
