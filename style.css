@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 :root {
@@ -14,9 +15,10 @@ html {
 }
 
 body {
-  background-color: black;
   color: white;
 }
+
+/* bubble Effect */
 
 /* Header Section */
 .header {
@@ -25,7 +27,6 @@ body {
   left: 0;
   width: 100%;
   padding: 20px 10%;
-  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,10 +65,14 @@ nav a::before {
   bottom: -5px;
   height: 2px;
   width: 100%;
-  background-color: var(--main-color);
+  background-image: linear-gradient(
+    to right,
+    rgb(67, 124, 205) 0%,
+    rgb(69, 214, 202) 100%
+  );
   border-radius: 50px;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.3s ease;
 }
 
@@ -80,11 +85,15 @@ nav a.active::before {
 nav a:hover,
 nav a:focus,
 nav a.active {
-  color: var(--main-color);
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .active {
-  color: var(--main-color);
+  background: linear-gradient(to right, rgb(67, 124, 205), rgb(69, 214, 202));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .active::before {
@@ -426,6 +435,15 @@ nav a.active {
   }
 }
 
+@keyframes animate {
+  0% {
+    transform: translateY(100vh) scale(0);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
 /* Medium-sized screens (like tablets or smaller desktops) */
 @media (max-width: 1300px) {
   nav {
@@ -510,11 +528,18 @@ nav a.active {
 /* Mobile Section */
 
 @media (max-width: 768px) {
+  #home,
+  #about,
+  #skills,
+  #contact {
+    overflow: hidden;
+  }
+
   #home {
     flex-direction: column-reverse;
     padding: 20px;
     gap: 20px;
-    height: 100vh; /* Allow content to fit on mobile */
+    height: 100svh; /* Allow content to fit on mobile */
     align-items: center;
     justify-content: center;
   }
@@ -561,7 +586,7 @@ nav a.active {
     flex-direction: column-reverse;
     padding: 20px;
     gap: 20px;
-    height: 100vh; /* Allow content to fit on mobile */
+    height: 100svh;
     align-items: center;
     justify-content: center;
   }
@@ -584,49 +609,43 @@ nav a.active {
     display: none;
   }
 
-  .inner,
-  #end-container {
-    display: flex;
-    flex-direction: column-reverse; /* Stack items */
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    flex-wrap: wrap-reverse;
-  }
-
-  nav {
+  #skills .skill-description {
     display: none;
   }
-  #end-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .skill-description {
-    display: none; /* Hide descriptions on mobile */
+
+  #skills {
+    height: 100svh;
   }
 
-  .skill-box {
-    padding: 0.5rem; /* Adjust padding for mobile */
-  }
-
-  .inner {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 600px) {
   .skill-container {
+    align-items: center;
+    justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem 50px;
   }
 
-  .left-about img {
-    display: none;
+  .skills-header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .about-text {
-    font-size: 1.5rem;
+
+  .skill-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill-img img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #skills h1 {
+    padding-left: 20px;
+    font-size: 2rem;
+  }
+  #end-container {
+    display: flex;
+    flex-direction: column;
   }
 }
