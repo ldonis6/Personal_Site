@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", "sans-serif";
+  font-family: 'poppins', 'sans-serif';
 }
 
 html {
   scroll-behavior: smooth;
   background-image: linear-gradient(to right, #434343 0%, black 100%);
+  overflow-x: hidden;
 }
 
 :root {
@@ -16,6 +17,17 @@ html {
 
 body {
   color: white;
+  transition: 3s all ease;
+}
+
+.lightmode {
+  background-image: linear-gradient(
+    to right,
+    #262525 0%,
+    rgb(245, 241, 241) 100%
+  );
+  color: black;
+  transition: 3s ease;
 }
 
 /* bubble Effect */
@@ -25,12 +37,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   padding: 20px 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  background-color: #272626;
 }
 
 .logo {
@@ -44,7 +57,8 @@ body {
   animation: slideRight 1s ease forwards;
 }
 
-.navbar a {
+.navbar a,
+button {
   display: inline-block;
   font-size: 20px;
   color: #fff;
@@ -58,8 +72,14 @@ body {
   animation-delay: calc(0.2s * var(--i));
 }
 
+.navbar .mode {
+  border-radius: 20%;
+  background-color: white;
+  color: black;
+}
+
 nav a::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -5px;
@@ -104,7 +124,7 @@ nav a.active {
 
 #home {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row-reverse;
@@ -115,7 +135,7 @@ nav a.active {
 }
 
 #home-container {
-  min-width: 900px;
+  min-width: 100px;
 }
 
 #home-container h3 {
@@ -158,6 +178,7 @@ nav a.active {
 #home-container .typejs {
   animation: slideLeft 3s ease-in-out forwards;
   opacity: 0;
+  min-width: 50vw;
 }
 
 .social-media a {
@@ -232,12 +253,11 @@ nav a.active {
   display: flex;
   text-align: center;
   justify-content: center;
-  color: #fff;
   position: relative;
 }
 
 .skills-header::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -262,7 +282,6 @@ nav a.active {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  color: #ddd;
   cursor: pointer;
 }
 
@@ -285,7 +304,7 @@ nav a.active {
 }
 
 .skill-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -297,7 +316,7 @@ nav a.active {
 }
 
 .skill-title::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -321,7 +340,7 @@ nav a.active {
 }
 
 .skill-img::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -336,7 +355,6 @@ nav a.active {
 }
 
 .skill-title h3 {
-  color: #fff;
   margin-top: 0.5rem;
 }
 
@@ -350,23 +368,28 @@ nav a.active {
 #contact {
   height: 100vh;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
 #end-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
+  padding: 10%;
 }
 
-.bottom-left,
-.bottom-right {
-  padding: 40px;
-  color: white;
+.bottom-left h2 {
+  font-size: 5rem;
+  font-weight: 500;
 }
 
+.bottom-left p {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.form {
+  border: solid black;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /* Animation Keyframes */
 @keyframes slideRight {
   0% {
